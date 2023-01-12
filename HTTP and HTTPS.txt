@@ -1,0 +1,26 @@
+HTTP and HTTPS
+
+HTTP	
+The full form of HTTP is the Hypertext Transfer Protocol.	
+It is written in the address bar as http://.	
+The HTTP transmits the data over port number 80.	
+It is unsecured as the plain text is sent, which can be accessible by the hackers.	
+It is mainly used for those websites that provide information like blog writing.	
+It is an application layer protocol.	
+It does not use SSL.	
+Google does not give the preference to the HTTP websites.	
+The page loading speed is fast.	
+
+
+
+
+HTTPS
+The full form of HTTPS is Hypertext Transfer Protocol Secure.
+It is written in the address bar as https://.
+The HTTPS transmits the data over port number 443.
+It is secure as it sends the encrypted data which hackers cannot understand.
+It is a secure protocol, so it is used for those websites that require to transmit the bank account details or credit card numbers.
+It is a transport layer protocol.
+It uses SSL that provides the encryption of the data.
+Google gives preferences to the HTTPS as HTTPS websites are secure websites.
+The page loading speed is slow as compared to HTTP because of the additional feature that it supports, i.e., security.
