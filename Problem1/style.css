@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #3396f1;
+}
+
+.navbar {
+    font-family: cursive;
+    background-color: #0b034f;
+    font-size: 30px;
+    color: #fff;
+    width: 100%;
+    margin: 0 auto;
+    opacity: 0.8;
+    
+}
+
+.navbar ul li{
+    display: inline-block;
+    list-style: none;
+    padding: 20px 25px;
+       
+}
+/* .navbar img {
+  width: 230px;
+  height: 82px;
+  position: absolute;
+  top:0px;
+  left:80%;
+} */
+
+
+
+.slider-banner {
+    position: relative;
+    display: inline-block;
+    width: 99%;
+    height: 800px;
+    text-align: center;
+    margin-top: -42px;
+    box-sizing: border-box;
+    overflow: hidden;
+    align-items: center;
+  }
+  
+  .slider-banner input { display: none; }
+  .slider-image {
+    position: absolute;
+    left: 16px;
+    display: inline-block;
+    width: 98%;
+    height: 620px;
+    border: 6px solid white;
+    border-radius: 40px;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: left .2s ease-in;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .slider-image img { width: 100%; }
+  .nav label {
+    position: absolute;
+    top: 40%;
+    display: block;
+    color: rgba(255,255,255,.5);
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 50px;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0,0,0,.5);
+    text-align: center;
+    opacity: 0;
+    z-index: 9;
+  }
+  
+  input:checked + .slider-image {
+    position: absolute;
+    display: inline-block;
+    opacity: 1; 
+    visibility: visible;
+    transition: left .2s ease-in;
+  }
+  
+  .nav label:hover { opacity: 1; }
+  .slider-image img:hover + .nav label { opacity: .75; }
+  .nav .prev { left: 0; border-radius: 0  10px 10px 0; }
+  .nav .next { right: 0; border-radius: 10px  0 0 10px; }
+  
+  .bullet-nav {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .bullet {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 10px;
+    top: -90px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(40, 148, 255);
+  }
+  
+  .bullet:first-child { border-radius: 10px 0 0 10px; }
+  .bullet:last-child { border-radius: 0 10px 10px 0; }
+  
+  input#slideA:checked ~ .bullet-nav label#bulletA,
+  input#slideB:checked ~ .bullet-nav label#bulletB,
+  input#slideC:checked ~ .bullet-nav label#bulletC {
+    background-color: #0e007a;
+  }
+
+  .title {
+    background-color:rgb(252, 249, 249);
+    height: 50px;
+    width: 450px;
+    color: rgb(53, 30, 1);
+    position: relative;
+    top: 48%;
+    left: 35%;
+    z-index: 90;
+    opacity: 0.6;
+ 
+
+
+  }
+  h1 {
+    font-family: cursive;
+    
+  }
