@@ -103,10 +103,6 @@ class FoodItem {
     }
   
     displayInfo() {
-    //   console.log('Name: ',this.name);
-    //   console.log('Type: ',this.type);
-    //   console.log('Price: ',this.price);
-    //   console.log('Calories: ', this.calorie);
     console.log(`Name: ${this.name}`);
     console.log(`Type: ${this.type}`);
     console.log(`Price: $${this.price}`);
