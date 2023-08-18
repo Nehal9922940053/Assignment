@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Games Hub</title>
+</head>
+<body class="text-gray-600">
+    <div class="grid md:grid-cols-3">
+
+        <div class="md:col-span-1">
+            <nav>
+                <div>
+                    <div class="flex items">
+                        <div class="bg-amber-700 h-4 w-6"></div>
+                        <div class="bg-amber-600 h-8 w-6"></div>
+                        <div class="bg-amber-500 h-16 w-6"></div>
+                        <!-- <h1 class="text-amber-700 uppercase text-7xl font-bold p-4 border-b border-amber-300">Games Hub</h1>-->
+                    </div> 
+                   
+                    <h1 class="text-amber-700 uppercase text-7xl font-bold p-4 border-b border-amber-600 md:border-red-300 sm:border-amber-300 hover:text-amber-300">Games Hub</h1>
+                    <ul class="text-gray-950">
+                        <li>
+                            <span>
+                             <svg class="w-5 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                              </svg>
+                             </span> 
+                             <span>   
+                            <a href="#" class=" hover:text-amber-400">Home</a>
+                            </span>  
+                        </li>
+                        <li><a href="#" class=" hover:text-amber-400">About Us</a></li>
+                        <li><a href="#" class=" hover:text-amber-400">Contact</a></li>
+                        <li><a href="#" class=" hover:text-amber-400">Play Zone</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <main class="px-16 py-6 bg-amber-100 md:col-span-2">
+
+            <div class="flex justify-start sm:justify-end">
+                <a href="#" class="text-amber-700 rounded py-2 px-3 uppercase text-xs font-bold cursor-pointer tracking-wider border-2 border-amber-700 rounded-full hover:bg-amber-700 hover:text-white">Login</a>
+                <a href="#" class="text-amber-700 ml-2 rounded py-2 px-3 uppercase text-xs font-bold cursor-pointer tracking-wider border-2  border-amber-700 rounded-full  hover:bg-amber-700 hover:text-white">Signup</a>
+            </div>
+
+            <header>
+                <h2 class="text-6xl text-amber-500 font-semibold">Game Type</h2>
+                <h3 class="text-2xl">Quick Plays</h3>
+            </header>
+
+            <div>
+                <h4 class="font-bold text-2xl text-amber-500 mt-12 pb-2 border-b border-amber-300">Trending Games</h4>
+                <div class="mt-8">
+                    <div class="card">
+                    <div class="bg-white rounded overflow-hidden shadow-md relative mt-4">
+                    <div>
+                        <img class="w-full h-32 sm:h-48 object-cover" src="assets/image/game-3.jpg" alt="Chess">
+                    </div>
+                    <div class="m-4">
+                        <span class="font-bold">Chess Games Hub</span>
+                        <span class="block text-light italic">Built by Riot Gaming </span>
+                    </div>
+
+                    <div class="absolute bottom-3 right-9 mt-4">
+                        <button class="ml-6 text-amber-600 p-2 w-20 font-bold border-amber-600 border-2 hover:bg-amber-500 hover:text-white">Buy</button>
+                    </div>
+
+                    <div class="bg-amber-300 text-white-100 rounded-full p-2 absolute top-0 ml-3 mt-4">
+                        <span class="font-bold">
+                            <svg class="w-5 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 8.25H9m6 3H9m3 6l-3-3h1.5a3 3 0 100-6M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          </span>
+                        <span>25</span>
+                    </div>
+                </div>
+                </div>
+            </div>
+                <h4 class="font-bold text-2xl text-amber-500 mt-12 pb-2 border-b border-amber-300">Upcoming Games</h4>
+                <div class="mt-8 grid lg:grid-cols-3 gap-5">
+                    <div class="card hover:shadow-lg">
+                    <div class="bg-white rounded overflow-hidden shadow-md relative mt-4">
+                    <div>
+                        <img class="w-full h-32 sm:h-48 object-cover" src="assets/image/game-3.jpg" alt="Chess">
+                    </div>
+                    <div class="m-4">
+                        <span class="font-bold">Card Games Hub</span>
+                        <span class="block text-sm text-light italic">Built by Alpha Gaming </span>
+                    </div>
+                    <div class="absolute bottom-3 right-4 mt-4">
+                        <button class="ml-6 text-amber-600 p-2 w-16 font-bold border-amber-600 border-2 hover:bg-amber-500 hover:text-white">Buy</button>
+                    </div>
+                    <div class="bg-amber-300 text-white-100 rounded-full p-2 absolute top-0 ml-3 mt-4">
+                        <span class="font-bold"><svg class="w-5 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 8.25H9m6 3H9m3 6l-3-3h1.5a3 3 0 100-6M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                        </span>
+                        <span>25</span>
+                    
+                    </div>
+                </div>
+                </div>
+
+                <div class="card hover:shadow-lg">
+                    <div class="bg-white rounded overflow-hidden shadow-md relative mt-4">
+                    <div>
+                        <img class="w-full h-32 sm:h-48 object-cover" src="assets/image/game-3.jpg" alt="Chess">
+                    </div>
+                    <div class="m-4">
+                        <span class="font-bold">Card Games Hub</span>
+                        <span class="block text-sm text-light italic">Built by Alpha Gaming </span>
+                    </div>
+                    <div class="absolute bottom-3 right-4 mt-4">
+                        <button class="ml-6 text-amber-600 p-2 w-16 font-bold border-amber-600 border-2 hover:bg-amber-500 hover:text-white">Buy</button>
+                    </div>
+                    <div class="bg-amber-300 text-white-100 rounded-full p-2 absolute top-0 ml-3 mt-4">
+                        <span class="font-bold">
+                            <svg class="w-5 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 8.25H9m6 3H9m3 6l-3-3h1.5a3 3 0 100-6M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg></span>
+                        <span>25</span>
+                    
+                    </div>
+                </div>
+                </div>
+
+                <div class="card hover:shadow-lg">
+                    <div class="bg-white rounded overflow-hidden shadow-md relative mt-4">
+                    <div>
+                        <img class="w-full h-32 sm:h-48 object-cover" src="assets/image/game-3.jpg" alt="Chess">
+                    </div>
+                    <div class="m-4">
+                        <span class="font-bold">Card Games Hub</span>
+                        <span class="block text-sm text-light italic">Built by Alpha Gaming </span>
+                    </div>
+                    <div class="absolute bottom-3 right-4 mt-4">
+                        <button class="ml-6 text-amber-600 p-2 w-16 font-bold border-amber-600 border-2 hover:bg-amber-500 hover:text-white">Buy</button>
+                    </div>
+                    <div class="bg-amber-300 text-white-100 rounded-full p-2 absolute top-0 ml-3 mt-4">
+                        <span class="font-bold">
+                            <svg class="w-5 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 8.25H9m6 3H9m3 6l-3-3h1.5a3 3 0 100-6M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                              </svg>
+                        </span>
+                        <span>25</span>
+                    
+                    </div>
+                </div>
+                </div>
+
+                </div>
+                <div>
+                    <div>Load More Games......</div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+</body>
+</html>
