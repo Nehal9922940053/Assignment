@@ -1,0 +1,14 @@
+{
+  "name": "intro-to-nodejs",
+  "version": "0.0.1",
+  "description": "myfile.js",
+  "main": "myfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nehal",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.29.4"
+  }
+}
