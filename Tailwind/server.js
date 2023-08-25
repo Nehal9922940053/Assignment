@@ -10,7 +10,7 @@ const server = http.createServer((req, res)=>{
     //set headers
     res.setHeader('Content-Type', 'text/html')
     
-    let path = "./public/views/"
+    let path = "./public/views"
     console.log(`This  is default path: ${path}`);
     switch (req.url) {
         case "/": 

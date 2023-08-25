@@ -1,11 +1,34 @@
 const http = require('http');
 const fs = require('fs');
 
+const _= require('lodash');
+
 
 const server = http.createServer((req, res)=>{
     // console.log("request is created")
     // console.log(req)
     console.log(req.url, req.method)
+
+    //lodash 
+    //generating random number
+    const randomNum = _.random(100,200);
+    console.log("Random number: "+randomNum);
+
+    const welcomeGreet = () =>{
+        console.log("Welcome to the project (Welcome greet one)");
+    }
+
+    welcomeGreet();
+    welcomeGreet();
+    welcomeGreet();
+
+    const welcomeGreetTwo = _.once( () =>{
+        console.log("Welcome Greet Two ");
+    });
+
+    welcomeGreetTwo();
+    welcomeGreetTwo();
+    welcomeGreetTwo();
 
     //set headers
     res.setHeader('Content-Type', 'text/html')
@@ -23,6 +46,11 @@ const server = http.createServer((req, res)=>{
         console.log(`This page is now  on screen: ${path}`);
         break;
         case "/team": 
+        res.statusCode=301;
+        res.setHeader('Location','/teams');
+        res.end();
+        break;
+        case "/myteam": 
         res.statusCode=301;
         res.setHeader('Location','/teams');
         res.end();
