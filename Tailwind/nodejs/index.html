@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>node JS</title>
+    <title>Node JS and Mongo DB</title>
 </head>
 <body>
    <!--  <h1>Node JS</h1>
@@ -89,5 +89,111 @@
     <li>Comes with additional features to make our life easier</li>
  </ul>
 
+
+ <h1>DATABASE</h1>
+    <ul>
+        <li>SQL</li>
+        <li>No SQL</li>
+    </ul>
+
+    <h3>SQL</h3>
+    <ul>
+        <li>Table</li>
+        <li>Rows</li>
+        <li>Columns</li>
+    </ul>
+
+    <h3>No SQL</h3>
+    <ul>
+        <li>collections</li>
+        <li>Documents</li>
+    </ul>
+
+
+    <h1>Mongo DB</h1>
+    <p>no sql database</p>
+
+        <h2>collections</h2>
+    <p>Each collection will be used to store aparticular kind of data</p>
+    <ul>
+        <li>
+            user collections
+        </li>
+         <li>
+            Blog collections
+        </li>
+         <li>
+            Author collections
+        </li>
+    </ul>
+
+    <h4>Documents</h4>
+    <p>blog doc which represent single kind of blog</p>
+    <pre>
+        {
+            "id":"Objectid(123456)",
+            "title":"Apex in India",
+            "preview text":"this is body",
+            "author":"sahil"
+        }
+    </pre>
+
+    <h1>Moongoose : Model and Schema</h1>
+    <p>ODM library: Object Document Mapping Library</p>
+
+    <ul>
+        <li>
+            User Model :User.get(), User.searchuserbyid()
+        </li>
+         <li>
+            Blog Model : Blog.create(), Blog.delete()
+        </li>
+    </ul>
+
+
+    <h3>Schemas and Model</h3>
+    <h4>Schema</h4>
+    <pre>
+        Blog Schema:
+        title(string), required
+        preview-text (string), required
+        body (string), required
+
+
+        User Schema: 
+        name (string), required
+        age (int), required
+        bio (string), required
+        email (string), required
+        
+    </pre>
+
+    <h4>Model</h4>
+    <p>Allows us to communicate with the database collections</p>
+    <pre>
+        Blog Model: Blog Schema - database - blogs collection
+    </pre>
+
+
+    <h1>Node js </h1>
+    <h3>Requests</h3>
+    <ul>
+        <li>POST</li>
+        <li>GET</li>
+        <li>PUT</li>
+        <li>DELETE</li>
+    </ul>
+
+    <h2>GET Requests</h2>
+    <ul>
+        <li>http://localhost:8000/blog --get</li>
+        <li>http://localhost:8000/create --post</li>
+        <li>http://localhost:8000/blog --post = add a blog</li>
+        <li>http://localhost:8000/blog:id --get = view a single blog</li>
+        <li>http://localhost:8000/blog:id --delete = update a single blog</li>
+        <li>http://localhost:8000/blog:id --put</li>
+
+    </ul>
 </body>
 </html>
+

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pheixon | <%= title %></title>
+</head> -->
+
+<%- include('./partials/header.ejs') %>
+
+<body>    
+  
+    <!-- <h1>Hello</h1>
+    <p>This is new html</p>
+
+    <h2>Routing</h2>
+    <h2>Status Code</h2>
+    <ul>
+        <li>100 Range: Informational response</li>
+        <li>200: Success code</li>
+        <li>300: redirection</li>
+        <li>400: client side error codes</li>
+        <li>500: server side error codes</li>
+    </ul> -->
+
+
+
+
+<!-- <% const name ='Deepak' %> -->
+
+  <!-- <nav>
+        <div class="site-title">
+            <a href="/">Pheixon</a>
+            <p>This is esports gaming site</p>
+        </div>
+        <ul> 
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/teams">Teams</a></li>
+            <li><a href="/blogs/create">Create New Blog</a></li>
+        </ul>
+    </nav> -->
+
+    <%- include('./partials/nav.ejs') %>
+
+    <div class="blog-content">
+        <p>All Blogs</p>
+        <!-- <p><%= name %></p> -->
+        <% if(blogs.length > 0) {%>
+        <% blogs.forEach((blogs) => {%>
+            <h3 class="blog-title"> <%= blogs.blogtitle %></h3>
+            <p class="blog-preview"> <%= blogs.previewtext %> </p>
+            <p class="blog-body"> <%= blogs.blogcontent %> </p>
+            <p class="blog-author"> <%= blogs.author %> </p>
+            <% }) %>
+            <% }else { %>
+                <p>There is no blog present write here. but you can create one going inside <a href="/blogs/create">create blog</a></p>
+                <% } %>
+
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>
