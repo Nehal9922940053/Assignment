@@ -50,6 +50,7 @@
         <!-- <p><%= name %></p> -->
         <% if(blogs.length > 0) {%>
         <% blogs.forEach((blogs) => {%>
+            <a  class="singlelink"  href="/blogs/<%= blogs._id%>"></a>
             <h3 class="blog-title"> <%= blogs.blogtitle %></h3>
             <p class="blog-preview"> <%= blogs.previewtext %> </p>
             <p class="blog-body"> <%= blogs.blogcontent %> </p>

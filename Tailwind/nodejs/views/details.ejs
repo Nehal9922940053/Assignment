@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/header.ejs') %>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+    <div class="details-content">
+        <h3 class="blog-title"> <%= blogs.blogtitle %></h3>
+        <div class="content">
+        <p class="blog-preview"> <%= blogs.previewtext %> </p>
+        <p class="blog-body"> <%= blogs.blogcontent %> </p>
+        <p class="blog-author"> <%= blogs.author %> </p>
+    </div>
+    <a class="delete" data-doc="<%= blogs._id %>">Delete</a>
+</div>
+
+
+
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>

@@ -40,6 +40,12 @@ app.set('view engine','ejs');
 app.use(express.static('public'));
 
 
+//middleware for encoding form data
+app.use(express.urlencoded({extended:true}));
+
+
+
+
 //custom middleware
 app.use((req,res,next) =>{
     console.log("New Request is made: ");
@@ -61,36 +67,40 @@ app.use(morgan("dev"));
 //     next();
 // });
 
-app.get('/all-blogs',(req,res)=>{
-    Blog.find()
-    .then((result) => {
-        res.send(result);
-    })
-    .catch((err)=>console.log(err));
-    })
+// app.get('/all-blogs',(req,res)=>{
+//     Blog.find()
+//     .then((result) => {
+//         res.send(result);
+//     })
+//     .catch((err)=>console.log(err));
+//     })
     
-    app.get('/single-blog',(req,res)=>{
-        Blog.findById('6548d525b02c7815fee45421')
-    .then((result) => {
-        res.send(result);
-    })
-    .catch((err)=>console.log(err));
-    })
+    // app.get('/single-blog',(req,res)=>{
+    //     Blog.findById('6548d525b02c7815fee45421')
+    // .then((result) => {
+    //     res.send(result);
+    // })
+    // .catch((err)=>console.log(err));
+    // })
     
+
     
-    app.get('/add-blog',(req,res)=>{
-    const blog =new Blog({
-        title:'new blog',
-        preview:'this is a new blog with mongo db',
-        body:'this is blog body',
-        author:'Nehal'
-    });
-    blog.save()
-    .then(result =>{
-        res.send(result)
-    })
-    .catch((err)=>console.log(err))
-    })
+
+
+    
+    // app.get('/add-blog',(req,res)=>{
+    // const blog =new Blog({
+    //     title:'new blog',
+    //     preview:'this is a new blog with mongo db',
+    //     body:'this is blog body',
+    //     author:'Nehal'
+    // });
+    // blog.save()
+    // .then(result =>{
+    //     res.send(result)
+    // })
+    // .catch((err)=>console.log(err))
+    // })
 
 app.get('/', (req, res) => {
     // res.send('<h1>This is Home Page</h1>')
@@ -98,15 +108,24 @@ app.get('/', (req, res) => {
    
    
    //adding blogs
-   const blogs =[
-    {blogtitle: 'Arena', previewtext:'This is a preview text', blogcontent:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio libero, modi quia exercitationem sapiente amet repellendus itaque eius recusandae accusantium aliquid quod a fugiat numquam accusamus aut provident nesciunt veniam?', author:'Avinash' },
-    {blogtitle: 'Top Players', previewtext:'This is a preview text', blogcontent:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio libero, modi quia exercitationem sapiente amet repellendus itaque eius recusandae accusantium aliquid quod a fugiat numquam accusamus aut provident nesciunt veniam?', author:'Avinash' },
-    {blogtitle: 'Trending games', previewtext:'This is a preview text', blogcontent:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio libero, modi quia exercitationem sapiente amet repellendus itaque eius recusandae accusantium aliquid quod a fugiat numquam accusamus aut provident nesciunt veniam?', author:'Preetish' },
-    {blogtitle: 'Basic Tutorial', previewtext:'This is a preview text', blogcontent:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio libero, modi quia exercitationem sapiente amet repellendus itaque eius recusandae accusantium aliquid quod a fugiat numquam accusamus aut provident nesciunt veniam?', author:'Avinash' },
-    {blogtitle: 'Rank', previewtext:'This is a preview text', blogcontent:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio libero, modi quia exercitationem sapiente amet repellendus itaque eius recusandae accusantium aliquid quod a fugiat numquam accusamus aut provident nesciunt veniam?', author:'Omkar' }
-   ];
+//    const blogs =[
+//     {blogtitle: 'Arena', previewtext:'This is a preview text', blogcontent:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio libero, modi quia exercitationem sapiente amet repellendus itaque eius recusandae accusantium aliquid quod a fugiat numquam accusamus aut provident nesciunt veniam?', author:'Avinash' },
+//     {blogtitle: 'Top Players', previewtext:'This is a preview text', blogcontent:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio libero, modi quia exercitationem sapiente amet repellendus itaque eius recusandae accusantium aliquid quod a fugiat numquam accusamus aut provident nesciunt veniam?', author:'Avinash' },
+//     {blogtitle: 'Trending games', previewtext:'This is a preview text', blogcontent:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio libero, modi quia exercitationem sapiente amet repellendus itaque eius recusandae accusantium aliquid quod a fugiat numquam accusamus aut provident nesciunt veniam?', author:'Preetish' },
+//     {blogtitle: 'Basic Tutorial', previewtext:'This is a preview text', blogcontent:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio libero, modi quia exercitationem sapiente amet repellendus itaque eius recusandae accusantium aliquid quod a fugiat numquam accusamus aut provident nesciunt veniam?', author:'Avinash' },
+//     {blogtitle: 'Rank', previewtext:'This is a preview text', blogcontent:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio libero, modi quia exercitationem sapiente amet repellendus itaque eius recusandae accusantium aliquid quod a fugiat numquam accusamus aut provident nesciunt veniam?', author:'Omkar' }
+//    ];
+
+    res.redirect('/blogs');
    
-    res.render('index',{title:'Home', blogs})
+    // res.render('index',{title:'Home', blogs})
+});
+
+app.get('/blogs',(req,res)=>{
+    Blog.find().sort({createdAt: -1})
+    .then((result)=>{
+         res.render('index',{title:'All Blogs', blogs: result});
+    })
 });
 
 app.get('/about', (req, res) => {
@@ -127,10 +146,10 @@ app.get('/aboutus', (req, res) => {
 });
 
 
-app.use((req,res,next) =>{
-    console.log("This is the next Middleware ");
-    next();
- });
+// app.use((req,res,next) =>{
+//     console.log("This is the next Middleware ");
+//     next();
+//  });
 
 
 app.get('/teams', (req, res) => {
@@ -147,6 +166,33 @@ app.get('/myteam', (req, res) => {
 app.get('/blogs/create', (req, res) => {
     res.render('createBlog',{title :'Create Blog'})
 });
+
+
+// app.post('/blogs', (req, res) => {  
+//     console.log(req.body);
+//     const blog = new Blog(req.body);
+//     blog.save()
+//     .then((result) => {
+//         res.redirect('/blogs');
+//     })
+//     .catch((err) => {
+//         console.log(err)
+//     });
+// });
+
+
+app.get('/blogs/:id',(req,res)=>{
+    const id= req.params.id;
+    console.log(id);
+    Blog.findById(id)
+.then((result) => {
+    res.render('details',{blog:result, title:'Blog Details'});
+})
+.catch((err)=>console.log(err));
+})
+
+
+
 
 
 app.use((req, res) => {
