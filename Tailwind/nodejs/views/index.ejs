@@ -50,12 +50,16 @@
         <!-- <p><%= name %></p> -->
         <% if(blogs.length > 0) {%>
         <% blogs.forEach((blogs) => {%>
-            <a  class="singlelink"  href="/blogs/<%= blogs._id%>"></a>
-            <h3 class="blog-title"> <%= blogs.blogtitle %></h3>
-            <p class="blog-preview"> <%= blogs.previewtext %> </p>
-            <p class="blog-body"> <%= blogs.blogcontent %> </p>
+            <a  class="blogs singlelink"  href="/blogs/<%= blogs._id%>">
+            <h3 class="blog-title"> <%= blogs.title %></h3>
+            <!-- to test -->
+            <!-- <% console.log(blogs.title); %>  -->
+            <p class="blog-preview"> <%= blogs.preview %> </p>
+            <p class="blog-body"> <%= blogs.body %> </p>
             <p class="blog-author"> <%= blogs.author %> </p>
+            <% console.log(blogs.author); %>
             <% }) %>
+        </a>
             <% }else { %>
                 <p>There is no blog present write here. but you can create one going inside <a href="/blogs/create">create blog</a></p>
                 <% } %>

@@ -128,6 +128,31 @@ app.get('/blogs',(req,res)=>{
     })
 });
 
+
+app.post('/blogs',(req,res)=>{
+    console.log(req.body);
+    const blog =  new Blog(req.body);
+    blog.save()
+    .then((result) =>{
+        res.redirect('/blogs');
+    })
+    .catch((err) =>{
+        console.log(err);
+    })
+});
+
+app.delete('/blogs/:id',(req,res)=>{
+    const id = req.params.id;
+    Blog.findByIdAndDelete(id)
+    .then((result)=>{
+        res.json({redirect:'/blogs'});
+    })
+    .catch((err) => {
+       console.log(err); 
+    })
+
+}); 
+
 app.get('/about', (req, res) => {
     // res.send('<h1>This is About Page</h1>')
     // res.sendFile('./views/about.html', {root: __dirname});
@@ -186,7 +211,7 @@ app.get('/blogs/:id',(req,res)=>{
     console.log(id);
     Blog.findById(id)
 .then((result) => {
-    res.render('details',{blog:result, title:'Blog Details'});
+    res.render('details',{blogs:result, title:'Blog Details'});
 })
 .catch((err)=>console.log(err));
 })

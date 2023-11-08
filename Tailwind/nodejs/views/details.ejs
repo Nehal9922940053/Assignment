@@ -7,10 +7,10 @@
     <%- include('./partials/nav.ejs') %>
 
     <div class="details-content">
-        <h3 class="blog-title"> <%= blogs.blogtitle %></h3>
+        <h3 class="blog-title"> <%= blogs.title %></h3>
         <div class="content">
-        <p class="blog-preview"> <%= blogs.previewtext %> </p>
-        <p class="blog-body"> <%= blogs.blogcontent %> </p>
+        <p class="blog-preview"> <%= blogs.preview %> </p>
+        <p class="blog-body"> <%= blogs.body %> </p>
         <p class="blog-author"> <%= blogs.author %> </p>
     </div>
     <a class="delete" data-doc="<%= blogs._id %>">Delete</a>
@@ -20,5 +20,26 @@
 
 
     <%- include('./partials/footer.ejs') %>
+
+    <script>
+        const del = document.querySelector('a.delete');
+        del.addEventListener('click', (e) => {
+            const endpoint =`/blogs/${del.data-doc}` 
+            fetch(endpoint,{
+                method:'DELETE'
+            })
+            .then((response) =>{
+                response.json()
+            })
+            .then((data) => {
+                console.log(data);
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+        })
+
+    </script>
+
 </body>
 </html>
