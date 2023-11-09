@@ -18,10 +18,19 @@ function App() {
 
   const handleCompare = () => {
     // Add logic to compare foods (texture, odor, flavor, etc.)
-    console.log('Comparison logic goes here');
+    if (food1 && food2) {
+      console.log(`Comparing ${food1.name} and ${food2.name}:`);
+      console.log(`Texture: ${food1.texture} vs ${food2.texture}`);
+      console.log(`Odor: ${food1.odor} vs ${food2.odor}`);
+      console.log(`Flavor: ${food1.flavor} vs ${food2.flavor}`);
+      console.log(`Ingredients: ${food1.ingredients.join(', ')} vs ${food2.ingredients.join(', ')}`);
+      console.log(`Cooking Methods: ${food1.cookingMethods.join(', ')} vs ${food2.cookingMethods.join(', ')}`);
+    } else {
+      console.log('Please select two foods for comparison.');
+    }
   };
 
-  
+
 
   return (
     <div className="App">
