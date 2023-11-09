@@ -2,8 +2,45 @@ const express = require('express');
 const morgan = require('morgan');
 const mongoose= require('mongoose');
 const {result} = require('lodash');
+// const Blog = require('./models/blog');
+const blogRoutes = require('./routes/blogRoutes');
 
-const Blog = require('./models/blog');
+// let crypto = require("crypto");
+// const {Console} = require('console');
+// console.log(crypto);
+// console.log(crypto.getHashes);
+// console.log(crypto.getCipher);
+
+//create hash
+//let salt = crypto.randomBytes(128).toString('hex);
+
+//create hash
+// let hash = crypto
+//         .createHash('sha256')
+//         .update('Your own message')
+//         .digest('hex');
+// console.log(hash);
+
+
+// let secret_message =  "Confidential"
+// let iv = crypto.randomBytes(16);
+// // console.log('iv: '+iv);
+// let key = '12345678123456781234567812345678'
+// let cipher = crypto.createDecipheriv('aes-256-cbc',key,iv);
+// console.log('cipher: '+cipher);
+// let encryption = cipher.update(secret_message, 'utf-8', 'hex');
+// // console.log(encryption);
+// encryption += cipher.final('hex');
+
+// console.log('encrypted_message: '+encrypted_message);
+
+
+// let decryption = crypto.createDecipheriv('aes-256-cbc',key,iv);
+// // console.log('decryption: '+decryption);
+// let decrypted_message = decryption.update(encryption, 'hex', 'utf-8');
+// // console.log(decrypted_message);
+// decrypted_message += decrypted_message.final('utf-8');
+// console.log('decrypted_message: '+decrypted_message);
 
 const app = express();
 
@@ -121,37 +158,37 @@ app.get('/', (req, res) => {
     // res.render('index',{title:'Home', blogs})
 });
 
-app.get('/blogs',(req,res)=>{
-    Blog.find().sort({createdAt: -1})
-    .then((result)=>{
-         res.render('index',{title:'All Blogs', blogs: result});
-    })
-});
+// app.get('/blogs',(req,res)=>{
+//     Blog.find().sort({createdAt: -1})
+//     .then((result)=>{
+//          res.render('index',{title:'All Blogs', blogs: result});
+//     })
+// });
 
 
-app.post('/blogs',(req,res)=>{
-    console.log(req.body);
-    const blog =  new Blog(req.body);
-    blog.save()
-    .then((result) =>{
-        res.redirect('/blogs');
-    })
-    .catch((err) =>{
-        console.log(err);
-    })
-});
+// app.post('/blogs',(req,res)=>{
+//     console.log(req.body);
+//     const blog =  new Blog(req.body);
+//     blog.save()
+//     .then((result) =>{
+//         res.redirect('/blogs');
+//     })
+//     .catch((err) =>{
+//         console.log(err);
+//     })
+// });
 
-app.delete('/blogs/:id',(req,res)=>{
-    const id = req.params.id;
-    Blog.findByIdAndDelete(id)
-    .then((result)=>{
-        res.json({redirect:'/blogs'});
-    })
-    .catch((err) => {
-       console.log(err); 
-    })
+// app.delete('/blogs/:id',(req,res)=>{
+//     const id = req.params.id;
+//     Blog.findByIdAndDelete(id)
+//     .then((result)=>{
+//         res.json({redirect:'/blogs'});
+//     })
+//     .catch((err) => {
+//        console.log(err); 
+//     })
 
-}); 
+// }); 
 
 app.get('/about', (req, res) => {
     // res.send('<h1>This is About Page</h1>')
@@ -188,9 +225,9 @@ app.get('/myteam', (req, res) => {
     res.redirect('/teams');
 });
 
-app.get('/blogs/create', (req, res) => {
-    res.render('createBlog',{title :'Create Blog'})
-});
+// app.get('/blogs/create', (req, res) => {
+//     res.render('createBlog',{title :'Create Blog'})
+// });
 
 
 // app.post('/blogs', (req, res) => {  
@@ -206,18 +243,18 @@ app.get('/blogs/create', (req, res) => {
 // });
 
 
-app.get('/blogs/:id',(req,res)=>{
-    const id= req.params.id;
-    console.log(id);
-    Blog.findById(id)
-.then((result) => {
-    res.render('details',{blogs:result, title:'Blog Details'});
-})
-.catch((err)=>console.log(err));
-})
+// app.get('/blogs/:id',(req,res)=>{
+//     const id= req.params.id;
+//     console.log(id);
+//     Blog.findById(id)
+// .then((result) => {
+//     res.render('details',{blogs:result, title:'Blog Details'});
+// })
+// .catch((err)=>console.log(err));
+// })
 
 
-
+app.use(blogRoutes);
 
 
 app.use((req, res) => {
