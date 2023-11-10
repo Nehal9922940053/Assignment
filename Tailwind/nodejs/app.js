@@ -4,6 +4,12 @@ const mongoose= require('mongoose');
 const {result} = require('lodash');
 // const Blog = require('./models/blog');
 const blogRoutes = require('./routes/blogRoutes');
+const app = express();
+// const cors = require('cors');
+
+// app.use(cors());
+
+
 
 // let crypto = require("crypto");
 // const {Console} = require('console');
@@ -42,7 +48,7 @@ const blogRoutes = require('./routes/blogRoutes');
 // decrypted_message += decrypted_message.final('utf-8');
 // console.log('decrypted_message: '+decrypted_message);
 
-const app = express();
+
 
 // const dbURI='mongodb+srv://sahil-1:sahil-1@cluster0.0ii7x.mongodb.net/?retryWrites=true&w=majority';
 
@@ -56,13 +62,13 @@ const dbURI='mongodb+srv://sahil-1:sahil-1@cluster0.0ii7x.mongodb.net/node-tutor
 // });
 
 
-mongoose.connect(dbURI)
-.then(result=>{
-    app.listen(3000)
-    // console.log("connected to database successfully");
-})
-.catch(err=>console.log(err));
-// app.listen(3000);
+// mongoose.connect(dbURI)
+// .then(result=>{
+//     app.listen(3000)
+//     // console.log("connected to database successfully");
+// })
+// .catch(err=>console.log(err));
+// // app.listen(3000);
 
 
 
